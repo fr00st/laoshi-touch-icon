@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Лаоши · Учебник (180-3.png)</title>
+
+  <!-- Apple Touch Icon (относительный путь с файлом 180-3.png и cache-buster ?v=4) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="180-3.png?v=4">
+  <link rel="icon" type="image/png" sizes="180x180" href="180-3.png?v=4">
+
+  <!-- iOS Web App Metadata -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Лаоши">
+  <meta name="theme-color" content="#feda4b">
+
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181a22;
+      --card-inner: #1e212b;
+      --text: #f0f2f5;
+      --subtext: #9aa1b2;
+      --accent: #feda4b;
+      --border: #292d3e;
+      --code-bg: #12141c;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 60px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 540px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .nav-switcher {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .nav-switcher a {
+      color: var(--subtext);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-switcher a.active {
+      color: #0f1117;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 18px;
+    }
+    .icon-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(254, 218, 75, 0.25), 0 2px 6px rgba(0, 0, 0, 0.4);
+      background: #feda4b;
+    }
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    p.desc {
+      font-size: 15px;
+      color: var(--subtext);
+    }
+    .instruction-box {
+      width: 100%;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: left;
+      font-size: 14px;
+    }
+    .instruction-box strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .instruction-box ol {
+      padding-left: 20px;
+    }
+    .instruction-box li {
+      margin-bottom: 6px;
+      color: #d1d5db;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(254, 218, 75, 0.15);
+      color: var(--accent);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Agent / Developer Documentation Section */
+    .agent-guide {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .agent-guide h2 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .guide-step {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .guide-step h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .guide-step p {
+      font-size: 13.5px;
+      color: var(--subtext);
+    }
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: var(--accent);
+      background: rgba(254, 218, 75, 0.1);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 12.5px;
+    }
+    ul.tips {
+      padding-left: 20px;
+      font-size: 13.5px;
+      color: #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="nav-switcher">
+      <a href="./">Вариант 1 (180.png)</a>
+      <a href="180-2.html">Вариант 2 (180-2.png)</a>
+      <a href="180-3.html" class="active">Вариант 3 (180-3.png)</a>
+    </nav>
+
+    <main class="card">
+      <div class="badge">iOS Apple Touch Icon (180-3.png)</div>
+
+      <div class="icon-wrapper">
+        <img src="180-3.png?v=4" alt="Лаоши 180-3.png">
+      </div>
+
+      <h1>Лаоши · Учебник (180-3.png)</h1>
+      <p class="desc">Тест исходника <b>180-3.png</b> (180×180 px с увеличенным размером знака 99×104 px и полями ~35–41 px).</p>
+
+      <div class="instruction-box">
+        <strong>Инструкция для проверки на iPhone:</strong>
+        <ol>
+          <li>Откройте страницу в <b>Safari</b>.</li>
+          <li>Нажмите кнопку <b>«Поделиться»</b> (квадрат со стрелкой вверх).</li>
+          <li>Выберите <b>«На экран „Домой“»</b>.</li>
+          <li>Убедитесь, что превью иконки четкое, без мыла, и нажмите <b>«Добавить»</b>.</li>
+        </ol>
+      </div>
+    </main>
+
+    <!-- ИНСТРУКЦИЯ ДЛЯ АГЕНТА И РАЗРАБОТЧИКА -->
+    <section class="agent-guide">
+      <h2>🤖 Инструкция для агента и внедрения</h2>
+
+      <div class="guide-step">
+        <h3>1. Как скачать файл иконки</h3>
+        <p>Скачать проверенный файл 180-3.png в целевой каталог сайта:</p>
+        <pre><code># Скачивание файла в текущую папку проекта:
+curl -fsSL -o apple-touch-icon.png https://fr00st.github.io/laoshi-touch-icon/180-3.png
+
+# Если внедрение на сервере IHC (komdev.ru/laoshi/):
+# положить по пути: /opt/komdev-site/laoshi/apple-touch-icon.png</code></pre>
+      </div>
+
+      <div class="guide-step">
+        <h3>2. Код для вставки в &lt;head&gt;</h3>
+        <p>Вставить в HTML-документ (<b>важно:</b> путь должен быть относительным или с точным префиксом подпапки, без ошибочного слэша от корня):</p>
+        <pre><code>&lt;!-- Apple Touch Icon (относительный путь + cache buster) --&gt;
+&lt;link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=4"&gt;
+&lt;link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png?v=4"&gt;
+
+&lt;!-- Мета-теги для закрепления на домашнем экране iOS --&gt;
+&lt;meta name="apple-mobile-web-app-capable" content="yes"&gt;
+&lt;meta name="apple-mobile-web-app-title" content="Лаоши"&gt;
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="default"&gt;
+&lt;meta name="theme-color" content="#feda4b"&gt;</code></pre>
+      </div>
+
+      <div class="guide-step">
+        <h3>3. Как гарантированно избежать и сбросить кэш iOS</h3>
+        <p>iOS Safari очень агрессивно и намертво кэширует ярлыки в системной директории <code>WebClips</code>. Чтобы не видеть старое «мыло»:</p>
+        <ul class="tips">
+          <li><b>Cache Buster в URL:</b> Всегда меняйте версию в теге (<code>href="apple-touch-icon.png?v=4"</code>). При смене строки запроса Safari вынужден запросить новый ассет.</li>
+          <li><b>Удалить старую иконку с экрана:</b> Долгое нажатие на старый ярлык на айфоне &rarr; <i>«Удалить закладку»</i> (или <i>«Удалить с экрана „Домой“»</i>).</li>
+          <li><b>Сбросить данные сайта в Safari:</b> На iPhone открыть <i>Настройки &rarr; Safari &rarr; Дополнения &rarr; Данные сайтов</i> &rarr; найти домен и смахнуть влево (Удалить).</li>
+          <li><b>Очистить локальный кэш вкладки:</b> Перезагрузить страницу в Safari (удерживая значок обновления &rarr; <i>«Перезагрузить без блокировщиков / очистить»</i>), после чего добавить на экран заново.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
