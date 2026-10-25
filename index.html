@@ -50,6 +50,28 @@
       flex-direction: column;
       gap: 24px;
     }
+    .nav-switcher {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+    }
+    .nav-switcher a {
+      color: var(--subtext);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all 0.2s ease;
+    }
+    .nav-switcher a.active {
+      color: #0f1117;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -187,6 +209,11 @@
 <body>
 
   <div class="container">
+    <nav class="nav-switcher">
+      <a href="./" class="active">Вариант 1 (180.png)</a>
+      <a href="180-2.html">Вариант 2 (180-2.png)</a>
+    </nav>
+
     <main class="card">
       <div class="badge">iOS Apple Touch Icon (180.png)</div>
 
